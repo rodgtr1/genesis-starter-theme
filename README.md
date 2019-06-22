@@ -1,5 +1,4 @@
-# genesis-starter-2019
-
+# Genesis Starter Theme (Sass & Gulp)
 The Genesis Sample theme, Sassified, with a Gulp-driven workflow. (Sass and Gulp files gleaned from [Sridhar Katakam's repo](https://github.com/srikat/genesis-sample-task-runner, but have been tweaked specifically for this project)
 
 ### Installation
