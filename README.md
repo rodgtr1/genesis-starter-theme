@@ -3,8 +3,8 @@ The Genesis Sample theme, Sassified, with a Gulp-driven workflow.
 
 ### Installation
 1. Clone or download the repository
-2. Run npx wpgulp (to install WP Gulp (thanks to https://github.com/ahmadawais/WPGulp for putting this nice package together)
-3. Configure the project paths and other variables inside the wpgulp.config.js file. This is a compulsory step. (See below for specifics and further tweaks)
+2. Run npx wpgulp (to install WP Gulp (thanks to https://github.com/ahmadawais/WPGulp for putting this nice package together))
+3. Configure the project paths and other variables inside the wpgulp.config.js file. This is a compulsory step. (See below for specific paths for this theme)
 4. Run npm start
 
 
