@@ -89,6 +89,30 @@ function genesis_sample_enqueue_scripts_styles() {
 		);
 	}
 
+	wp_enqueue_script(
+		'custom-scripts',
+		CHILD_URL . '/assets/js/custom.min.js',
+		array( 'jquery' ),
+		genesis_get_theme_version()
+	);
+
+	wp_enqueue_script(
+		'vendor-scripts',
+		CHILD_URL . '/assets/js/vendor.min.js',
+		array( 'jquery' ),
+		genesis_get_theme_version()
+	);
+}
+
+// Remove default Genesis Child Theme Stylesheet
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
+// Create function to append last modified file to stylesheet URL
+add_action( 'wp_enqueue_scripts', 'tm_genesis_child_stylesheet' );
+function tm_genesis_child_stylesheet() {
+     $theme_name = defined('CHILD_THEME_NAME') && CHILD_THEME_NAME ? sanitize_title_with_dashes(CHILD_THEME_NAME) : 'child-theme';
+     $version = defined( 'CHILD_THEME_VERSION' ) && CHILD_THEME_VERSION ? CHILD_THEME_VERSION : PARENT_THEME_VERSION;
+     $version .= '.' . date ( "njYHi", filemtime( get_stylesheet_directory() . '/style.css' ) );
+     wp_enqueue_style( $theme_name, CHILD_URL . '/assets/css/style.css', array(), $version );
 }
 
 add_action( 'after_setup_theme', 'genesis_sample_theme_support', 9 );
