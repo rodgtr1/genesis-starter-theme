@@ -249,3 +249,5 @@ function genesis_sample_comments_gravatar( $args ) {
 	return $args;
 
 }
+
+remove_action( 'genesis_meta', 'genesis_load_stylesheet' );
